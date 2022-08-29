@@ -30,4 +30,9 @@ class TodosController < ApplicationController
       render json: todo.errors, status: :unporcessable_entity
     end
   end
+
+  def destroy
+    id = params[:id]
+    Todo.find(id).destroy
+  end
 end
